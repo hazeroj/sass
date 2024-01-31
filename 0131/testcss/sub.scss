@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+// scss.scss
+
+:root {
+    // 글자색
+    --txt_bgcolor: #333;
+    --border01: 3px solid #00f; 
+    --width02:200px;
+}
+
+//의사클래스로서 문서 트리의 요소를 선택하는 선택자로서 html요소를 선택함을 뜻함 
+//항상위에만 작성해야 함, 밑에 작성하면 인식못함
+
+// 변수에 색상값 저장
+$color01: #f00;
+
+h2 {
+    // 글자색 color01변수값 적용
+    color: $color01;
+}
+
+h3 {
+    color: #00f;
+}
+
+p {
+    color: var(--txt_bgcolor);
+    border: var(--border01)
+}
+
