@@ -1,0 +1,140 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap");
+h2 {
+  font-size: 16px;
+  color: #00f;
+}
+
+.title01 {
+  font-family: "Noto Sans KR", "맑은 고딕", arial, sans-serif;
+  font-size: 30px;
+  color: #f00;
+}
+
+.btn1 {
+  padding: 4px 10px;
+  color: #333;
+  background: #0f0;
+}
+
+.btn2 {
+  padding: 4px 10px;
+  color: #333;
+  background: #f00;
+}
+
+.p01 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 250px;
+}
+
+.btn3 {
+  font-family: "궁서체";
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  padding: 5px 30px;
+  border-radius: 30px;
+  background: #ff0;
+  transition: 0.5s;
+}
+
+.btn4 {
+  font-family: "궁서체";
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #ccc;
+  padding: 5px 30px;
+  border-radius: 30px;
+  background: #0f0;
+  transition: 0.5s;
+}
+
+.btn3:hover,
+.btn4:hover {
+  background: #f00;
+  color: #fff;
+}
+
+.toggle_btn {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.bar {
+  position: absolute;
+  display: inline-block;
+  width: 38px;
+  height: 3px;
+  background-color: #333;
+  transition: 0.5s;
+  left: 1px;
+  transition: 0.5s;
+}
+
+.bar1,
+.t1 {
+  top: 5px;
+}
+
+.bar2,
+.t2 {
+  top: 18px;
+}
+
+.bar3,
+.t3 {
+  bottom: 5px;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #f00;
+  cursor: pointer;
+}
+
+#toggle:checked + .toggle_btn .bar1 {
+  transform: rotate(45deg);
+  top: 18px;
+}
+#toggle:checked + .toggle_btn .bar2 {
+  opacity: 0;
+}
+#toggle:checked + .toggle_btn .bar3 {
+  transform: rotate(-45deg);
+  bottom: 18px;
+}
+
+.rotate45 {
+  transform: rotate(45deg);
+  top: 18px;
+}
+
+.rotate-45 {
+  transform: rotate(-45deg);
+  bottom: 18px;
+}
+
+.rotate0 {
+  opacity: 0;
+}
+
+.fab, .fas {
+  font-size: 3rem;
+  border: 1px solid #333;
+  padding: 4px 6px;
+  background-color: #333;
+  color: #fff;
+  transition: 0.5s;
+}
+.fab:hover, .fas:hover {
+  background-color: #ff0;
+  color: #f00;
+}/*# sourceMappingURL=style.css.map */

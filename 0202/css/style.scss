@@ -1,0 +1,209 @@
+// style.scss
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+$font_s01: 12px;
+$title01: 16px;
+$color0: #333;
+$color1: #00f;
+$color2: #f00;
+$color3: #0f0;
+$color4: #ff0;
+$color5: #fff;
+// 시간변수
+$time : 0.5s;
+
+h2 {
+  font-size: $title01;
+  color: $color1;
+}
+
+@mixin h3txt {
+  font-family: "Noto Sans KR", "맑은 고딕", arial, sans-serif;
+  font-size: 30px;
+  color: $color2;
+}
+
+@mixin btn {
+  padding: 4px 10px;
+  color: $color0;
+}
+
+.title01 {
+  @include h3txt;
+}
+
+.btn1 {
+  @include btn;
+  background: $color3;
+}
+
+.btn2 {
+  @include btn;
+  background: $color2;
+}
+
+@mixin txt_over {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 250px
+}
+
+.p01 {
+  @include txt_over
+}
+
+// 공통버튼 서식(글자관련)
+@mixin btnFont {
+  font-family: "궁서체";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+// 공통버튼 서식(컬러, 여백관련)
+@mixin btnArea {
+  border: 1px solid #ccc;
+  padding: 5px 30px;
+  border-radius: 30px;
+}
+
+@mixin btn {
+  @include btnFont;
+  @include btnArea;
+}
+
+.btn3 {
+  @include btn;
+  background: $color4;
+  transition: $time;
+}
+
+.btn4 {
+  @include btn;
+  background: $color3;
+  transition: $time;
+}
+
+.btn3:hover,
+.btn4:hover {
+  background: $color2;
+  color: $color5;
+}
+
+// 모바일 bar서식
+.toggle_btn {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+@mixin bar {
+  position: absolute;
+  display: inline-block;
+  width: 38px;
+  height: 3px;
+  background-color: $color0;
+  transition: $time;
+  left: 1px;
+}
+
+.bar {
+  @include bar;
+  transition: 0.5s;
+}
+
+.bar1,
+.t1 {
+  top: 5px;
+}
+
+.bar2,
+.t2 {
+  top: 18px;
+}
+
+.bar3,
+.t3 {
+  bottom: 5px;
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid $color2;
+  cursor: pointer;
+}
+
+
+
+
+
+@mixin rotate45 {
+  transform: rotate(45deg);
+  top: 18px;
+}
+
+@mixin rotate-45 {
+  transform: rotate(-45deg);
+  bottom: 18px;
+}
+
+@mixin rotate0 {
+  opacity: 0;
+}
+
+#toggle {
+  &:checked+.toggle_btn {
+    .bar1 {
+      @include rotate45
+    }
+
+    .bar2 {
+      @include rotate0
+    }
+
+    .bar3 {
+      @include rotate-45
+    }
+
+  }
+}
+
+.rotate45 {
+  @include rotate45
+}
+
+.rotate-45 {
+
+  @include rotate-45
+}
+
+.rotate0 {
+  @include rotate0
+}
+
+@mixin sns_size{
+  font-size: 3rem;
+  border: 1px solid $color0;
+  padding: 4px 6px;
+  background-color: $color0;
+  color: $color5;
+}
+
+
+@mixin sns_color {
+  background-color: $color4;
+  color: $color2;
+}
+
+.fab, .fas {
+  @include sns_size;
+  transition: $time;
+  
+  &:hover {
+    @include sns_color
+  }
+}
